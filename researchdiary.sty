@@ -239,6 +239,28 @@
     #1
 }
 
+% Meeting Summary Environment
+\newtcolorbox{meetingsummary}[1][]{
+    breakable,
+    colback=lightgray,
+    colframe=summarycolor,
+    boxrule=2pt,
+    leftrule=8pt,
+    before skip=1em,
+    after skip=1em,
+    left=15pt,
+    right=15pt,
+    top=12pt,
+    bottom=12pt,
+    fontupper=\small,
+    title={\faCalendar*\,\textbf{Meeting Summary}},
+    coltitle=white,
+    colbacktitle=summarycolor,
+    arc=8pt,
+    #1
+}
+
+
 % =============================================================================
 % DATE FORMATTING
 % =============================================================================
