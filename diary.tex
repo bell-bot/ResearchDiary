@@ -41,157 +41,80 @@
 \tableofcontents
 \newpage
 
-% =============================================================================
-% SAMPLE DIARY ENTRY
-% =============================================================================
+\section{Resources}
+
+\begin{itemize}
+	\item \href{https://drive.google.com/drive/folders/1NMMUbx4KKj_sZhrTCWCkbRoOakGAddWG?usp=sharing}{DPhil Progression Information and Resources}
+\end{itemize}
+\newpage
 
 \section{04 February 2026}
 
 \subsection{Research Plan}
 Today's main tasks:
 \begin{itemize}[leftmargin=*]
-    \item Reading relevant literature on optimization methods
-    \item Conducting experimental validation of production systems
-    \item Summarizing research progress and planning next steps
+    	\item Meeting with Seth and Gunes
+    	\item Familiarise with DPhil milestones and progression requirements
+    	\item Reading relevant literature suggested during supervisor meeting
+    	\item Watch ATSML Lecture 2
+	
 \end{itemize}
 
 \subsection{Content Details}
 
-% Paper reading section
-\begin{paper}
-\textbf{Paper Title:} Optimization Methods for Production Systems \cite{he2016deep}
-
-\textbf{Authors:} Smith, J. et al.
-
-\textbf{Main Content:}
+\begin{meetingsummary}
+\textbf{Meeting Notes:}
 \begin{itemize}
-    \item Proposed a new optimization algorithm for production scheduling
-    \item Achieved significant improvements in manufacturing efficiency
-    \item Algorithm has better convergence and computational efficiency
-    \item Introduced the concept of adaptive scheduling for dynamic environments
+	\item DPhil Milestones
+		\begin{itemize}
+			\item Term 4, Week 0: Transfer status
+			\item 8th/9th Term: Confirmation of DPhil status
+		\end{itemize}
+	\item Finding a research question
+		\begin{itemize}
+			\item Bayesian Transformers
+				\begin{itemize}
+					\item \href{https://arxiv.org/abs/2112.10510}{The Bayesian Geometry of Transformer Attention}
+					\item \href{https://arxiv.org/abs/2112.10510}{Bayesian Transformer}
+					\item \href{https://arxiv.org/abs/2112.10510}{Transformers Can Do Bayesian Inference}
+				\end{itemize}
+			\item AI-assisted proofs
+				\begin{itemize}
+					\item Existing tools: LEAN Proof Checker and \href{https://xenaproject.wordpress.com/what-is-the-xena-project/}{Xena Project}, Autodiff
+					\item Possible steps:
+						\begin{enumerate}
+							\item Compile dataset of theorems presented in previous conference papers (e.g. NeurIPS)
+							\item Verify the theorems and proofs in the dataset
+							\item Goal: Can we produce \textit{new} theorems and proofs?
+						\end{enumerate}
+					\item Other resources:
+						\begin{itemize}
+							\item \url{https://en.wikipedia.org/wiki/Kevin_Buzzard}
+							\item \url{https://terrytao.wordpress.com/2025/12/08/the-story-of-erdos-problem-126/}
+							\item \href{https://arxiv.org/abs/2510.01346}{Aristotle: IMO-level Automated Theorem Proving}
+						\end{itemize}
+				\end{itemize}
+		\end{itemize}
+	\item Mechanistic interpretability
+		\begin{itemize}
+			\item Potentially connected to encrypted backdoors
+			\item Talk to Marek and Junayed
+		\end{itemize}
+	\item Statistical Machine Learning
+		\begin{itemize}
+			\item \href{https://arxiv.org/abs/2503.21473}{DeepRV: Accelerating spatiotemporal inference with pre-trained neural priors}
+		\end{itemize}
+	\item Random Number Generators
+		\begin{itemize}
+			\item Can a backdoor be hidden in a RNG/ induced through an RNG? I.e. malicious signal induced via carefully chosen "random" numbers?
+			\item \href{https://arxiv.org/abs/2204.06974}{Planting Undetectable Backdoors in Machine Learning Models}
+			\item \href{https://dl.acm.org/doi/10.1145/3717823.3718245}{Oblivious Defense in ML Models: Backdoor Removal without Detection}
+		\end{itemize}
 \end{itemize}
 
-\textbf{Personal Thoughts:}
-The optimization approach in this paper shows promising results for industrial applications. The adaptive scheduling concept addresses dynamic production challenges effectively. This method might be applicable to my research on manufacturing systems.
-
-\textbf{Relevance Score:} \textcolor{successgreen}{*****} (5/5)
-
-\textbf{Related Papers:}
-\begin{itemize}
-    \item \cite{simonyan2014very} - Traditional scheduling methods comparison
-    \item \cite{krizhevsky2012imagenet} - Baseline optimization approaches
-\end{itemize}
-\end{paper}
-
-% Experiment log section
-\begin{experiment}
-\textbf{Experiment Name:} Production System Optimization
-
-\textbf{Objective:}
-Compare performance of different optimization algorithms for production scheduling
-
-\textbf{Experimental Setup:}
-\begin{itemize}
-    \item Dataset: Manufacturing production data (1000 orders, 50 machines)
-    \item Algorithms: Genetic Algorithm \cite{he2016deep}, Simulated Annealing \cite{simonyan2014very}
-    \item Iterations: 1000 iterations
-    \item Parameters: Adaptive mutation rate and cooling schedule
-    \item Objective: Minimize makespan and maximize resource utilization
-\end{itemize}
-
-\textbf{Results:}
-\begin{center}
-\begin{tabular}{@{}lcc@{}}
-\toprule
-\textbf{Algorithm} & \textbf{Makespan} & \textbf{Computational Time} \\
-\midrule
-Genetic Algorithm & 92.3\% efficiency & 2.5h \\
-Simulated Annealing & 89.7\% efficiency & 3.2h \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\textbf{Key Findings:}
-\begin{itemize}
-    \item Genetic Algorithm performs significantly better due to adaptive parameters
-    \item Computational time is reduced by 22\% with improved convergence
-    \item Better solution quality observed with genetic approach
-\end{itemize}
-
-\textbf{Issues and Thoughts:}
-Genetic Algorithm's superior performance validates the effectiveness of evolutionary optimization. Next step is to analyze the specific reasons and potentially apply hybrid methods \cite{vaswani2017attention} to further improve performance.
-\end{experiment}
-
-% Code snippet section
-\begin{codebox}
-\% Example code for genetic algorithm implementation
-def genetic\_algorithm(population, generations=100):
-    """
-    Genetic algorithm implementation for production scheduling
-    """
-    best\_solution = None
-    
-    \% Main evolution loop
-    for generation in range(generations):
-        \% Selection
-        parents = select\_parents(population)
-        
-        \% Crossover
-        offspring = crossover(parents)
-        
-        \% Mutation
-        offspring = mutate(offspring)
-        
-        \% Evaluation
-        fitness = evaluate(offspring)
-        
-        \% Update population
-        population = update\_population(population, offspring)
-        
-        \% Track best solution
-        if fitness > best\_fitness:
-            best\_solution = offspring
-            best\_fitness = fitness
-    
-    return best\_solution
-\end{codebox}
-
-% Important note section
-\begin{note}
-\textbf{Important Discovery:} The genetic algorithm approach shows promise for my research direction. Consider exploring:
-\begin{itemize}
-    \item Hybrid optimization methods combining multiple algorithms
-    \item Machine learning techniques \cite{goodfellow2014generative} for parameter tuning
-    \item Real-time scheduling applications
-\end{itemize}
-\end{note}
-
-% Daily summary section
-\begin{summary}
-\textbf{Today's Achievements:}
-\begin{itemize}
-    \item Gained deep understanding of genetic algorithm principles from \cite{he2016deep}
-    \item Completed baseline experiments, establishing performance benchmarks
-    \item Discovered promising research direction for hybrid optimization
-    \item Identified potential applications in manufacturing systems
-\end{itemize}
-
-\textbf{Tomorrow's Plan:}
-\begin{itemize}
-    \item Analyze specific reasons for Genetic Algorithm's performance advantages
-    \item Implement hybrid optimization methods
-    \item Prepare presentation materials for next week's group meeting
-    \item Review related literature on optimization methods \cite{lecun2015deep}
-\end{itemize}
-
-\textbf{Issues Encountered:}
-Some problems with experimental environment configuration, need to contact IT department for resolution. Computational resource limitations require optimization of algorithm parameters.
-
-\textbf{Inspiration Notes:}
-Consider integrating machine learning techniques \cite{vaswani2017attention} into optimization algorithms, might yield unexpected results. The combination of evolutionary algorithms and machine learning could be a novel contribution to the.
-\end{summary}
+\end{meetingsummary}
 
 % Print bibliography section
-\printbibliographysection
+%\printbibliographysection
 
 \end{document} 
