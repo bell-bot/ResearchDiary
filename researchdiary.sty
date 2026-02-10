@@ -138,6 +138,26 @@
 % CUSTOM ENVIRONMENTS
 % =============================================================================
 
+\tcbset{
+    papertitle/.store in=\papertitle,
+    papertitle={},
+    authors/.store in=\paperauthors,
+    authors={},
+    summary/.store in=\papersummary,
+    summary={},
+}
+
+\pgfkeys{
+    /paper/.is family,
+    /paper,
+    papertitle/.store in=\papertitle,
+    papertitle={},
+    authors/.store in=\paperauthors,
+    authors={},
+    summary/.store in=\papersummary,
+    summary={},
+}
+
 % Paper reading environment
 \newtcolorbox{paper}[1][]{
     breakable,
@@ -156,7 +176,16 @@
     coltitle=white,
     colbacktitle=papercolor,
     arc=8pt,
-    #1
+    % Format the content automatically
+    before upper={%
+        \pgfkeys{/paper,#1}%
+        \textbf{Paper title:}\quad \papertitle\newline
+        \textbf{Authors:}\quad \paperauthors\newline
+        \textbf{Summary:}\newline \papersummary\newline
+    },
+    before lower*={
+        \textbf{Notes:}
+    }
 }
 
 % Experiment log environment
