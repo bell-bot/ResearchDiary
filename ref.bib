@@ -1,49 +1,16 @@
-@article{he2016deep,
-  title={Deep residual learning for image recognition},
-  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
-  journal={Proceedings of the IEEE conference on computer vision and pattern recognition},
-  pages={770--778},
-  year={2016}
+@inproceedings{Mller2022,
+   abstract = {Currently, it is hard to reap the benefits of deep learning for Bayesian methods, which allow the explicit specification of prior knowledge and accurately capture model uncertainty. We present Prior-Data Fitted Networks (PFNs). PFNs leverage large-scale machine learning techniques to approximate a large set of posteriors. The only requirement for PFNs to work is the ability to sample from a prior distribution over supervised learning tasks (or functions). Our method restates the objective of posterior approximation as a supervised classification problem with a set-valued input: it repeatedly draws a task (or function) from the prior, draws a set of data points and their labels from it, masks one of the labels and learns to make probabilistic predictions for it based on the set-valued input of the rest of the data points. Presented with a set of samples from a new supervised learning task as input, PFNs make probabilistic predictions for arbitrary other data points in a single forward propagation, having learned to approximate Bayesian inference. We demonstrate that PFNs can near-perfectly mimic Gaussian processes and also enable efficient Bayesian inference for intractable problems, with over 200-fold speedups in multiple setups compared to current methods. We obtain strong results in very diverse areas such as Gaussian process regression, Bayesian neural networks, classification for small tabular data sets, and few-shot image classification, demonstrating the generality of PFNs. Code and trained PFNs are released at https://github.com/automl/TransformersCanDoBayesianInference.},
+   author = {Samuel Müller and Noah Hollmann and Sebastian Pineda and Josif Grabocka and Frank Hutter},
+   booktitle = {ICLR 2022 - 10th International Conference on Learning Representations},
+   title = {TRANSFORMERS CAN DO BAYESIAN INFERENCE},
+   year = {2022}
 }
-
-@article{simonyan2014very,
-  title={Very deep convolutional networks for large-scale image recognition},
-  author={Simonyan, Karen and Zisserman, Andrew},
-  journal={arXiv preprint arXiv:1409.1556},
-  year={2014}
-}
-
-@article{lecun2015deep,
-  title={Deep learning},
-  author={LeCun, Yann and Bengio, Yoshua and Hinton, Geoffrey},
-  journal={nature},
-  volume={521},
-  number={7553},
-  pages={436--444},
-  year={2015},
-  publisher={Nature Publishing Group}
-}
-
-@inproceedings{krizhevsky2012imagenet,
-  title={Imagenet classification with deep convolutional neural networks},
-  author={Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
-  booktitle={Advances in neural information processing systems},
-  pages={1097--1105},
-  year={2012}
-}
-
-@article{vaswani2017attention,
-  title={Attention is all you need},
-  author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
-  journal={Advances in neural information processing systems},
-  volume={30},
-  year={2017}
-}
-
-@article{goodfellow2014generative,
-  title={Generative adversarial nets},
-  author={Goodfellow, Ian and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
-  journal={Advances in neural information processing systems},
-  volume={27},
-  year={2014}
+@article{Agarwal2026,
+   abstract = {Modern sequence models often appear to behave as Bayesian learners, but it remains unclear whether this reflects genuine probabilistic inference or task-specific heuristics. We introduce Bayesian wind tunnels-controlled environments where the true posterior is known in closed form and memorization is provably impossible-to resolve this question empirically. In these settings, small transformers reproduce exact Bayesian posteriors for filtering and hypothesis elimination with 10 −3-10 −4 bit accuracy, while capacity-matched MLPs fail by orders of magnitude. To understand which architectural ingredients enable exact inference, we decompose Bayesian computation into three inference primitives: (i) belief accumulation-integrating evidence into a running posterior; (ii) belief transport-propagating beliefs forward through stochastic dynamics; and (iii) random-access binding-retrieving stored hypotheses by content rather than position. Different tasks demand different subsets of these primitives, and different architectures can realize different subsets. Comparing Transformers, Mamba, LSTMs, and MLPs across bijection learning, HMM filtering, and associative recall, we find that Transformers realize all three primitives; Mamba realizes accumulation and transport but struggles with random-access binding; LSTMs realize only accumulation (of static sufficient statistics); and MLPs realize none. Geometric diagnostics reveal orthogonal key bases, low-dimensional value manifolds parameterized by posterior entropy, and-in Mamba-five discrete clusters corresponding to HMM hidden states. These results demonstrate that Bayesian computation is not monolithic: its realizability depends on the inference primitives a task demands and the architectural mechanisms available to implement them. Bayesian wind tunnels provide a foundation for mechanistically connecting small, verifiable systems to reasoning phenomena observed in large language models.},
+   author = {Naman Agarwal and Siddhartha R Dalal},
+   keywords = {cs.AI,cs.LG,stat.ML},
+   title = {The Bayesian Geometry of Transformer Attention Paper I of the Bayesian Attention Trilogy},
+   volume = {1},
+   url = {https://arxiv.org/abs/2512.22471},
+   year = {2026}
 }
