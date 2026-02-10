@@ -127,15 +127,31 @@ Today's main tasks:
 	papertitle = {Transformers Can Do Bayesian Inference~\cite{Mller2022}},
 	authors = {Mueller et al.},
 	summary = {
-		Bayesian methods are usually slow or mathematically intractable for large datasets. Deep learning is fast but often bad at uncertainty and priors.
-		As a solution, the authors present Prior-Data Fitted Networks (PFNs), which learn the mapping of the data to Bayesian posterior prediction.}
+		Bayesian methods are usually slow or mathematically intractable for large datasets. Deep learning is fast but often bad at uncertainty and priors. As a solution, the authors present Prior-Data Fitted Networks (PFNs), which learn the mapping of the data to Bayesian posterior prediction.}
 	]
-	\tcblower
-	\textbf{Notes:}
+	\paragraph{Key Contributions}
 	\begin{itemize}
-		\item PFNs: train transformers to approximate Bayesian posterior predictive distirbutions by sampling synthetic distirbutions, masking labels, and learning to predict them. At inference time, a single forward pass approximates Bayesian inference.
-		\item PFNs \textit{approximate} these posteriors
-		\item PFNs work for any prior distribution that can be sampled from
+		\item PFNs (transformers that learn to approximate Bayesian posterior predictive distributions); this includes architectural changes to the standard transformer architecture, such as the Riemann distribution (a discretized output distribution for regression) and removal of positional encodings for permutation invariance over dataset examples
+		\item Demonstrate that PFNs can approximate the PPD of Gaussian processes and Bayesian neural networks (BNNs) + are much faster than standard methods for approximating Bayesian inference (e.g. MCMC, variational inference)
+		\item A BNN prior over architectures outperforms XGBoost/CatBoost on small tabular datasets while being $\sim$5000$\times$ faster, with strong calibration (low expected calibration error)
+		\item Strong few-shot learning on Omniglot using a simple stroke-based prior
+	\end{itemize}
+	\tcblower
+	\paragraph{Notes}
+	\begin{itemize}
+		\item Focuses on Bayesian posterior prediction for supervised learning problems, particularly small-data regimes (e.g. 30 training samples in tabular experiments)
+		\item PFNs: train transformers to approximate Bayesian posterior predictive distributions by sampling synthetic datasets from a prior, masking labels, and learning to predict them. At inference time, a single forward pass approximates Bayesian inference.
+		\item PFNs work for any prior distribution that can be sampled from $\rightarrow$ this is a very relaxed requirement compared to the standard assumptions of other Bayesian inference approximations. E.g. MCMC methods like NUTS~\cite{Hoffman2014} assume access to non-normalised posterior density, ability to evaluate the likelihood $p(D|\theta)$ and prior $p(\theta)$ pointwise, and gradients to the log-posterior.
+		\item Deep learning models encode inductive bias through e.g. architecture, training data, and training procedure. PFNs let you inject an explicit prior by defining how to sample synthetic tasks.
+		\item Limitation: PFN must be retrained for each new prior
+	\end{itemize}
+
+	\paragraph{Thoughts}
+	\begin{itemize}
+		\item PFNs can effectively mimic Gaussian processes, but what about non-Gaussian processes (especially compared to MCMC and VI)?
+		\begin{itemize}
+			\item The paper does test beyond GPs---the BNN experiments involve highly non-Gaussian, multimodal posteriors. PFNs handle these well precisely because they only need to sample from the prior, not evaluate densities. The limitation is more about whether you can design a prior that matches your real-world problem.
+		\end{itemize}
 	\end{itemize}
 \end{paper}
 

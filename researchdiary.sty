@@ -179,9 +179,15 @@
     % Format the content automatically
     before upper={%
         \pgfkeys{/paper,#1}%
-        \textbf{Paper title:}\quad \papertitle\newline
-        \textbf{Authors:}\quad \paperauthors\newline
-        \textbf{Summary:}\newline \papersummary\newline
+        \begin{flushleft}
+            \begin{tabular}{lp{0.8\textwidth}}
+                \textbf{Paper title:} & \papertitle\\
+                \textbf{Authors:} & \paperauthors\\
+                \textbf{Summary:} & \papersummary\\
+            \end{tabular}
+        \end{flushleft}
+        
+        
     }
 }
 
