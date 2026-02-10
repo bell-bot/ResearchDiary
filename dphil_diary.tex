@@ -131,8 +131,11 @@ Today's main tasks:
 		As a solution, the authors present Prior-Data Fitted Networks (PFNs), which learn the mapping of the data to Bayesian posterior prediction.}
 	]
 	\tcblower
+	\textbf{Notes:}
 	\begin{itemize}
-		\item Item 1
+		\item PFNs: train transformers to approximate Bayesian posterior predictive distirbutions by sampling synthetic distirbutions, masking labels, and learning to predict them. At inference time, a single forward pass approximates Bayesian inference.
+		\item PFNs \textit{approximate} these posteriors
+		\item PFNs work for any prior distribution that can be sampled from
 	\end{itemize}
 \end{paper}
 
