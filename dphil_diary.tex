@@ -215,6 +215,13 @@ Today's main tasks:
 	\paragraph{Thoughts}
 	\begin{itemize}
 		\item The authors present three inference primitive, but they do not prove that these are \textit{exhaustive}. Different tasks may reveal additional primitives.
+		\item Key takeaways:
+			\begin{itemize}
+				\item Wind tunnel idea: create tasks where you know the true Bayesian answer and memorisation is impossible. This lets us test whether models do genuine inference.
+				\item Transformers can do exact Bayes: On the wind tunnel tasks, transformers match the analytic posterior with high precision.
+				\item Architectures differ in what inference they can perform: The primitives framework gives us a vocabulary for why transformers beat LSTMs on some tasks (because attention enables content-based retrieval that recurrence cannot).
+				\item Attention creates interpretable geometric structure: Keys become orthogonal hypothesis axes, attention sharpens onto valid hypotheses across depth. 
+			\end{itemize}
 	\end{itemize}
 \end{paper}
 % Print bibliography section
