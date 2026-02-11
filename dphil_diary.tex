@@ -185,7 +185,37 @@ Today's main tasks:
 		Uses \textit{Bayesian wind tunnels} (controlled prediction tasks with closed-form posteriors where the hypothesis space is too large for memorisation and in-context prediction requires genuine probabilistic inference) to empirically prove transformers perform exact Bayesian inference and understand how.
 	}
 	]
+	\tcblower
+	\paragraph{Key Contributions}
+	\begin{itemize}
+		\item Transformers match analytic Bayesian posteriors with $10^{-3}-10^{-4}$ bit accuracy on bijection learning and HMM filtering.
+		\item Decompose Bayesian Learning into three primitives: 
+			\begin{itemize}
+				\item \textit{Belief accummulation}\quad integrating evidence into the posterior as observations arrive
+				\item \textit{Belief transport}\quad propagating beliefs forward through stochastic dynamics; i.e. transforming the belief vector according to the system dynamincs.
+				\item \textit{Random-access binding}\quad Retrieving stored hypotheses by content rather than position.
+			\end{itemize}
+		\item Architecture comparison: Transformers realise all three; Mamba handles accummulation/transport but struggles with binding; LSTMs only handle accumulation; MLPs fail entirely
+	\end{itemize}
 
+	\paragraph{Notes}
+	\begin{itemize}
+		\item The authors used the different wind tunnels to identify which inference primitive the model realised. Belief accummulation was tested by bijection elimination, belief transport was tested by HMM filtering, and random-access binding was tested by associative recall.
+		\item How do transformers realise all three primitives?
+			\begin{itemize}
+				\item The transformer layers can be broadly mapped to different inference steps:
+					\begin{enumerate}
+						\item \textbf{Layer 0 - Set up representational infrastructure}: Build orthogonal frame (define hypothesis space). Keys at this layer form an approximately orthogonal basis over input tokens. Thus, each hypothesis occupies its own independent direction.
+						\item \textbf{Middle layers - Perform actual computation}: Sharpen Q-K alignment (eliminate inconsistent hypotheses)
+						\item \textbf{Late layers - Improve numerical accuracy}: Refine value manifold (encode posterior entropy precisely)
+					\end{enumerate}
+			\end{itemize}
+	\end{itemize}
+
+	\paragraph{Thoughts}
+	\begin{itemize}
+		\item The authors present three inference primitive, but they do not prove that these are \textit{exhaustive}. Different tasks may reveal additional primitives.
+	\end{itemize}
 \end{paper}
 % Print bibliography section
 \printbibliographysection
