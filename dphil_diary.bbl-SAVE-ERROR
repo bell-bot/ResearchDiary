@@ -1,0 +1,139 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{Mller2022}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=2a41bcef42ee0b53547f6a4a5853997c}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d06a205e19de4032b81274f1d7b52162}{%
+           family={Hollmann},
+           familyi={H\bibinitperiod},
+           given={Noah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=237247c7973d418b5611966a11b37cb9}{%
+           family={Pineda},
+           familyi={P\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=30cee9e8b1f61d82df15782e87163d90}{%
+           family={Grabocka},
+           familyi={G\bibinitperiod},
+           given={Josif},
+           giveni={J\bibinitperiod}}}%
+        {{hash=528d4af87fd2ecf5fb8a22db913ce088}{%
+           family={Hutter},
+           familyi={H\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{c938ba6f5f5b6a4b80a6559a4bfe1bd3}
+      \strng{fullhash}{3f03cf81324339c4eb4bfbd6bc06571f}
+      \strng{fullhashraw}{3f03cf81324339c4eb4bfbd6bc06571f}
+      \strng{bibnamehash}{c938ba6f5f5b6a4b80a6559a4bfe1bd3}
+      \strng{authorbibnamehash}{c938ba6f5f5b6a4b80a6559a4bfe1bd3}
+      \strng{authornamehash}{c938ba6f5f5b6a4b80a6559a4bfe1bd3}
+      \strng{authorfullhash}{3f03cf81324339c4eb4bfbd6bc06571f}
+      \strng{authorfullhashraw}{3f03cf81324339c4eb4bfbd6bc06571f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Currently, it is hard to reap the benefits of deep learning for Bayesian methods, which allow the explicit specification of prior knowledge and accurately capture model uncertainty. We present Prior-Data Fitted Networks (PFNs). PFNs leverage large-scale machine learning techniques to approximate a large set of posteriors. The only requirement for PFNs to work is the ability to sample from a prior distribution over supervised learning tasks (or functions). Our method restates the objective of posterior approximation as a supervised classification problem with a set-valued input: it repeatedly draws a task (or function) from the prior, draws a set of data points and their labels from it, masks one of the labels and learns to make probabilistic predictions for it based on the set-valued input of the rest of the data points. Presented with a set of samples from a new supervised learning task as input, PFNs make probabilistic predictions for arbitrary other data points in a single forward propagation, having learned to approximate Bayesian inference. We demonstrate that PFNs can near-perfectly mimic Gaussian processes and also enable efficient Bayesian inference for intractable problems, with over 200-fold speedups in multiple setups compared to current methods. We obtain strong results in very diverse areas such as Gaussian process regression, Bayesian neural networks, classification for small tabular data sets, and few-shot image classification, demonstrating the generality of PFNs. Code and trained PFNs are released at https://github.com/automl/TransformersCanDoBayesianInference.}
+      \field{booktitle}{ICLR 2022 - 10th International Conference on Learning Representations}
+      \field{title}{TRANSFORMERS CAN DO BAYESIAN INFERENCE}
+      \field{year}{2022}
+    \endentry
+    \entry{Hoffman2014}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=937991c72400f4d0e0252027c8c03f67}{%
+           family={Hoffman},
+           familyi={H\bibinitperiod},
+           given={Matthew\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=1e1eb60e3b6e222217bf8e9b24070b28}{%
+           family={Gelman},
+           familyi={G\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ebc3339ca457482898a36327bc5f7ca8}
+      \strng{fullhash}{ebc3339ca457482898a36327bc5f7ca8}
+      \strng{fullhashraw}{ebc3339ca457482898a36327bc5f7ca8}
+      \strng{bibnamehash}{ebc3339ca457482898a36327bc5f7ca8}
+      \strng{authorbibnamehash}{ebc3339ca457482898a36327bc5f7ca8}
+      \strng{authornamehash}{ebc3339ca457482898a36327bc5f7ca8}
+      \strng{authorfullhash}{ebc3339ca457482898a36327bc5f7ca8}
+      \strng{authorfullhashraw}{ebc3339ca457482898a36327bc5f7ca8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Hamiltonian Monte Carlo (HMC) is a Markov chain Monte Carlo (MCMC) algorithm that avoids the random walk behavior and sensitivity to correlated parameters that plague many MCMC methods by taking a series of steps informed by first-order gradient information. These features allow it to converge to high-dimensional target distributions much more quickly than simpler methods such as random walk Metropolis or Gibbs sampling. However, HMC's performance is highly sensitive to two user-specified parameters: a step size e and a desired number of steps L. In particular, if L is too small then the algorithm exhibits undesirable random walk behavior, while if L is too large the algorithm wastes computation. We introduce the No-U-Turn Sampler (NUTS), an extension to HMC that eliminates the need to set a number of steps L. NUTS uses a recursive algorithm to build a set of likely candidate points that spans a wide swath of the target distribution, stopping automatically when it starts to double back and retrace its steps. Empirically, NUTS performs at least as efficiently as (and sometimes more efficiently than) a well tuned standard HMC method, without requiring user intervention or costly tuning runs. We also derive a method for adapting the step size parameter e on the fly based on primal-dual averaging. NUTS can thus be used with no hand-tuning at all, making it suitable for applications such as BUGS-style automatic inference engines that require efficient "turnkey" samplers. © 2014 Matthew D. Hoffman and Andrew Gelman.}
+      \field{issn}{15337928}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{title}{The no-U-turn sampler: Adaptively setting path lengths in Hamiltonian Monte Carlo}
+      \field{volume}{15}
+      \field{year}{2014}
+    \endentry
+    \entry{Agarwal2026}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=74a26bb215b480bc11e4a625789b5dd5}{%
+           family={Agarwal},
+           familyi={A\bibinitperiod},
+           given={Naman},
+           giveni={N\bibinitperiod}}}%
+        {{hash=5faa2eddf99f4aa8563b327a7d46603a}{%
+           family={Dalal},
+           familyi={D\bibinitperiod},
+           given={Siddhartha\bibnamedelima R},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{01e15dd7dc274c7433464f2d33af1fb6}
+      \strng{fullhash}{01e15dd7dc274c7433464f2d33af1fb6}
+      \strng{fullhashraw}{01e15dd7dc274c7433464f2d33af1fb6}
+      \strng{bibnamehash}{01e15dd7dc274c7433464f2d33af1fb6}
+      \strng{authorbibnamehash}{01e15dd7dc274c7433464f2d33af1fb6}
+      \strng{authornamehash}{01e15dd7dc274c7433464f2d33af1fb6}
+      \strng{authorfullhash}{01e15dd7dc274c7433464f2d33af1fb6}
+      \strng{authorfullhashraw}{01e15dd7dc274c7433464f2d33af1fb6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Modern sequence models often appear to behave as Bayesian learners, but it remains unclear whether this reflects genuine probabilistic inference or task-specific heuristics. We introduce Bayesian wind tunnels-controlled environments where the true posterior is known in closed form and memorization is provably impossible-to resolve this question empirically. In these settings, small transformers reproduce exact Bayesian posteriors for filtering and hypothesis elimination with 10 −3-10 −4 bit accuracy, while capacity-matched MLPs fail by orders of magnitude. To understand which architectural ingredients enable exact inference, we decompose Bayesian computation into three inference primitives: (i) belief accumulation-integrating evidence into a running posterior; (ii) belief transport-propagating beliefs forward through stochastic dynamics; and (iii) random-access binding-retrieving stored hypotheses by content rather than position. Different tasks demand different subsets of these primitives, and different architectures can realize different subsets. Comparing Transformers, Mamba, LSTMs, and MLPs across bijection learning, HMM filtering, and associative recall, we find that Transformers realize all three primitives; Mamba realizes accumulation and transport but struggles with random-access binding; LSTMs realize only accumulation (of static sufficient statistics); and MLPs realize none. Geometric diagnostics reveal orthogonal key bases, low-dimensional value manifolds parameterized by posterior entropy, and-in Mamba-five discrete clusters corresponding to HMM hidden states. These results demonstrate that Bayesian computation is not monolithic: its realizability depends on the inference primitives a task demands and the architectural mechanisms available to implement them. Bayesian wind tunnels provide a foundation for mechanistically connecting small, verifiable systems to reasoning phenomena observed in large language models.}
+      \field{title}{The Bayesian Geometry of Transformer Attention Paper I of the Bayesian Attention Trilogy}
+      \field{volume}{1}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2512.22471
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2512.22471
+      \endverb
+      \keyw{cs.AI,cs.LG,stat.ML}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
