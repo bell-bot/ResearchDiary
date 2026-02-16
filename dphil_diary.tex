@@ -229,6 +229,63 @@ Today's main tasks:
 			\end{itemize}
 	\end{itemize}
 \end{paper}
+
+\section{13th February 2026}
+
+\begin{summary}
+Today's main tasks:
+	\begin{itemize}[leftmargin=*]
+			\item Read Aristotle: IMO-level Automated Theorem Proving~\cite{Achim2025}
+			\item Read DeepRV: Accelerating spatiotemporal inference with pre-trained neural priors~\cite{Navott2025}
+	\end{itemize}
+\end{summary}
+
+\begin{paper}[
+	papertitle = {Aristotle: IMO-level Automated Theorem Proving~\cite{Achim2025}},
+	authors = {Achim et al.},
+	summary = {
+		Aristotle is a system for automated theorem proving that can solve International Mathematical Olympiad (IMO) level problems. It uses a combination of formal verification and informal reasoning, which allows for flexible planning and reasoning and grants access to a much large corpus of mathematical proofs.
+	}
+	]
+	\paragraph{Key Contributions}
+	\begin{itemize}
+		\item Aristotle: system for automated theorem proving that achieves gold-medal performance on 2025 IMO problems
+	\end{itemize}
+
+	\paragraph{Notes}
+	\begin{itemize}
+		\item Aristotle combines formal verification with informal reasoning
+			\begin{itemize}
+				\item This allows it to leverage the large corpus of informal mathematical proofs + more flexibility in reasoning and planning (compared to fully formal systems like LEAN)
+			\end{itemize}
+		\item Aristotle is composed of three main components:
+		\begin{itemize}
+			\item \textit{Lean proof search algorithm:}\quad Core engine that builds proofs step-by-step using Monte Carlo Graph Search (MCGS)
+			\begin{itemize}
+				\item A model trained using reinforcement learning serves two purposed during search: 1. Suggest which tactics to try from a given proof state and 2. estimate how likely a state is to be provable. This guides the search by predicting which proof steps are the most promising.
+			\end{itemize}
+			\item \textit{Informal reasoning system:}\quad Uses a language model to generate an informal proof sketch and breaks this proof down into lemmas which are then auto-formalized into LEAN.
+			\item \textit{Geometry solver:}\quad Specialized C++ engine for solving plane geometry problems.
+		\end{itemize}
+		\item Aristotle workflow:
+		\begin{enumerate}
+			\item Generate informal proof for target theorem
+			\item Break informal proof into lemmas
+			\item Auto-formalize lemmas into LEAN
+			\item Proof search using MCGS
+			\item If the proof search fails, revise the lemmas and repeat from step 3 until success or other termination condition.
+		\end{enumerate}
+	\end{itemize}
+
+	\paragraph{Follow-up Reading}
+	\begin{itemize}
+		\item \href{https://xenaproject.wordpress.com/what-is-the-xena-project/}{Xena Project}
+		\item Monte Carlo Graph Search (MCGS)/ Monte Carlo Tree Search (MCTS)
+		\item \href{https://lean-lang.org/}{LEAN Proof Assistant}
+		\item \href{https://deepmind.google/research/alphazero-and-muzero/}{AlphaZero and MuZero}
+	\end{itemize}
+\end{paper}
+
 % Print bibliography section
 \printbibliographysection
 
