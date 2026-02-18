@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{none/global//global/global}
-    \entry{Mller2022}{inproceedings}{}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{Mller2022}{inproceedings}{}{}
       \name{author}{5}{}{%
         {{hash=2a41bcef42ee0b53547f6a4a5853997c}{%
            family={Müller},
@@ -49,10 +49,12 @@
       }
       \strng{namehash}{c938ba6f5f5b6a4b80a6559a4bfe1bd3}
       \strng{fullhash}{3f03cf81324339c4eb4bfbd6bc06571f}
+      \strng{fullhashraw}{3f03cf81324339c4eb4bfbd6bc06571f}
       \strng{bibnamehash}{c938ba6f5f5b6a4b80a6559a4bfe1bd3}
       \strng{authorbibnamehash}{c938ba6f5f5b6a4b80a6559a4bfe1bd3}
       \strng{authornamehash}{c938ba6f5f5b6a4b80a6559a4bfe1bd3}
       \strng{authorfullhash}{3f03cf81324339c4eb4bfbd6bc06571f}
+      \strng{authorfullhashraw}{3f03cf81324339c4eb4bfbd6bc06571f}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -62,7 +64,7 @@
       \field{title}{TRANSFORMERS CAN DO BAYESIAN INFERENCE}
       \field{year}{2022}
     \endentry
-    \entry{Hoffman2014}{article}{}
+    \entry{Hoffman2014}{article}{}{}
       \name{author}{2}{}{%
         {{hash=937991c72400f4d0e0252027c8c03f67}{%
            family={Hoffman},
@@ -77,10 +79,12 @@
       }
       \strng{namehash}{ebc3339ca457482898a36327bc5f7ca8}
       \strng{fullhash}{ebc3339ca457482898a36327bc5f7ca8}
+      \strng{fullhashraw}{ebc3339ca457482898a36327bc5f7ca8}
       \strng{bibnamehash}{ebc3339ca457482898a36327bc5f7ca8}
       \strng{authorbibnamehash}{ebc3339ca457482898a36327bc5f7ca8}
       \strng{authornamehash}{ebc3339ca457482898a36327bc5f7ca8}
       \strng{authorfullhash}{ebc3339ca457482898a36327bc5f7ca8}
+      \strng{authorfullhashraw}{ebc3339ca457482898a36327bc5f7ca8}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -92,7 +96,7 @@
       \field{volume}{15}
       \field{year}{2014}
     \endentry
-    \entry{Agarwal2026}{article}{}
+    \entry{Agarwal2026}{article}{}{}
       \name{author}{2}{}{%
         {{hash=74a26bb215b480bc11e4a625789b5dd5}{%
            family={Agarwal},
@@ -107,10 +111,12 @@
       }
       \strng{namehash}{01e15dd7dc274c7433464f2d33af1fb6}
       \strng{fullhash}{01e15dd7dc274c7433464f2d33af1fb6}
+      \strng{fullhashraw}{01e15dd7dc274c7433464f2d33af1fb6}
       \strng{bibnamehash}{01e15dd7dc274c7433464f2d33af1fb6}
       \strng{authorbibnamehash}{01e15dd7dc274c7433464f2d33af1fb6}
       \strng{authornamehash}{01e15dd7dc274c7433464f2d33af1fb6}
       \strng{authorfullhash}{01e15dd7dc274c7433464f2d33af1fb6}
+      \strng{authorfullhashraw}{01e15dd7dc274c7433464f2d33af1fb6}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -127,7 +133,7 @@
       \endverb
       \keyw{cs.AI,cs.LG,stat.ML}
     \endentry
-    \entry{Achim2025}{misc}{}
+    \entry{Achim2025}{misc}{}{}
       \name{author}{23}{}{%
         {{hash=3b842f545b5788bf8d7591c2ce227324}{%
            family={Achim},
@@ -247,10 +253,12 @@
       }
       \strng{namehash}{d79dd82149de30d53f2d6dae69e6e1d1}
       \strng{fullhash}{b751409d8317cff487333f7987b6bdf5}
+      \strng{fullhashraw}{b751409d8317cff487333f7987b6bdf5}
       \strng{bibnamehash}{d79dd82149de30d53f2d6dae69e6e1d1}
       \strng{authorbibnamehash}{d79dd82149de30d53f2d6dae69e6e1d1}
       \strng{authornamehash}{d79dd82149de30d53f2d6dae69e6e1d1}
       \strng{authorfullhash}{b751409d8317cff487333f7987b6bdf5}
+      \strng{authorfullhashraw}{b751409d8317cff487333f7987b6bdf5}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -269,7 +277,7 @@
       \verb https://arxiv.org/abs/2510.01346
       \endverb
     \endentry
-    \entry{Navott2025}{article}{}
+    \entry{Navott2025}{article}{}{}
       \name{author}{4}{}{%
         {{hash=945892877e96f27beffa2acba0f4388e}{%
            family={Navott},
@@ -294,10 +302,12 @@
       }
       \strng{namehash}{4c04c1e47ac8e2477e5ebdbf6a8a835e}
       \strng{fullhash}{138aea927658225f89516db400ab2c08}
+      \strng{fullhashraw}{138aea927658225f89516db400ab2c08}
       \strng{bibnamehash}{4c04c1e47ac8e2477e5ebdbf6a8a835e}
       \strng{authorbibnamehash}{4c04c1e47ac8e2477e5ebdbf6a8a835e}
       \strng{authornamehash}{4c04c1e47ac8e2477e5ebdbf6a8a835e}
       \strng{authorfullhash}{138aea927658225f89516db400ab2c08}
+      \strng{authorfullhashraw}{138aea927658225f89516db400ab2c08}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
@@ -312,6 +322,62 @@
       \verb{url}
       \verb https://arxiv.org/abs/2503.21473v2
       \endverb
+      \keyw{cs.LG,stat.ML}
+    \endentry
+    \entry{Jenson2025}{report}{}{}
+      \name{author}{7}{}{%
+        {{hash=1dd0cdff013403553132937f88df15e0}{%
+           family={Jenson},
+           familyi={J\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=945892877e96f27beffa2acba0f4388e}{%
+           family={Navott},
+           familyi={N\bibinitperiod},
+           given={Jhonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=402f1dd9582c1423401bac941fc9ae0e}{%
+           family={Grynfelder},
+           familyi={G\bibinitperiod},
+           given={Piotr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=20368c0c6c96bea9e994a79a0481288b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Mengyan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a0952503ddb0ae0d79b7b9e1b53a6c49}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={Makkunda},
+           giveni={M\bibinitperiod}}}%
+        {{hash=07c549c05fba13d3d97804dc5454e9ba}{%
+           family={Semenova},
+           familyi={S\bibinitperiod},
+           given={Elizaveta},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9fe7a1a56ab9795fdb8535efac14a01a}{%
+           family={Flaxman},
+           familyi={F\bibinitperiod},
+           given={Seth},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d41c6419e791af91ce9fee2d11623c7d}
+      \strng{fullhash}{56328100e5cf95e76902ec44f3d9e42b}
+      \strng{fullhashraw}{56328100e5cf95e76902ec44f3d9e42b}
+      \strng{bibnamehash}{d41c6419e791af91ce9fee2d11623c7d}
+      \strng{authorbibnamehash}{d41c6419e791af91ce9fee2d11623c7d}
+      \strng{authornamehash}{d41c6419e791af91ce9fee2d11623c7d}
+      \strng{authorfullhash}{56328100e5cf95e76902ec44f3d9e42b}
+      \strng{authorfullhashraw}{56328100e5cf95e76902ec44f3d9e42b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Neural Processes (NPs) are a rapidly evolving class of models designed to directly model the posterior predictive distribution of stochastic processes. While early architectures were developed primarily as a scalable alternative to Gaussian Processes (GPs), modern NPs tackle far more complex and data hungry applications spanning geology, epidemiology, climate, and robotics. These applications have placed increasing pressure on the scalability of these models, with many architec-tures compromising accuracy for scalability. In this paper, we demonstrate that this tradeoff is often unnecessary, particularly when modeling fully or partially translation invariant processes. We propose a versatile new architecture, the Biased Scan Attention Transformer Neural Process (BSA-TNP), which introduces Kernel Regression Blocks (KRBlocks), group-invariant attention biases, and memory-efficient Biased Scan Attention (BSA). BSA-TNP is able to: (1) match or exceed the accuracy of the best models while often training in a fraction of the time, (2) exhibit translation invariance, enabling learning at multiple resolutions simultaneously , (3) transparently model processes that evolve in both space and time, (4) support high dimensional fixed effects, and (5) scale gracefully-running inference with over 1M test points with 100K context points in under a minute on a single 24GB GPU.}
+      \field{title}{Scalable Spatiotemporal Inference with Biased Scan Attention Transformer Neural Processes}
+      \field{type}{techreport}
+      \field{year}{2025}
       \keyw{cs.LG,stat.ML}
     \endentry
   \enddatalist
