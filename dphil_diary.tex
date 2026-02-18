@@ -230,13 +230,12 @@ Today's main tasks:
 	\end{itemize}
 \end{paper}
 
-\section{13th February 2026}
+\section{16th February 2026}
 
 \begin{summary}
 Today's main tasks:
 	\begin{itemize}[leftmargin=*]
 			\item Read Aristotle: IMO-level Automated Theorem Proving~\cite{Achim2025}
-			\item Read DeepRV: Accelerating spatiotemporal inference with pre-trained neural priors~\cite{Navott2025}
 	\end{itemize}
 \end{summary}
 
@@ -247,6 +246,7 @@ Today's main tasks:
 		Aristotle is a system for automated theorem proving that can solve International Mathematical Olympiad (IMO) level problems. It uses a combination of formal verification and informal reasoning, which allows for flexible planning and reasoning and grants access to a much large corpus of mathematical proofs.
 	}
 	]
+	\tcblower
 	\paragraph{Key Contributions}
 	\begin{itemize}
 		\item Aristotle: system for automated theorem proving that achieves gold-medal performance on 2025 IMO problems
@@ -283,6 +283,50 @@ Today's main tasks:
 		\item Monte Carlo Graph Search (MCGS)/ Monte Carlo Tree Search (MCTS)
 		\item \href{https://lean-lang.org/}{LEAN Proof Assistant}
 		\item \href{https://deepmind.google/research/alphazero-and-muzero/}{AlphaZero and MuZero}
+	\end{itemize}
+\end{paper}
+
+\section{17th February 2026}
+\begin{summary}
+Today's main tasks:
+	\begin{itemize}[leftmargin=*]
+			\item Read DeepRV: Accelerating spatiotemporal inference with pre-trained neural priors~\cite{Navott2025}
+			\item Create slides for supervisor meeting
+	\end{itemize}
+\end{summary}
+
+\begin{paper}[
+	papertitle={DeepRV: Accelerating spatiotemporal inference with pre-trained neural priors~\cite{Navott2025}}
+	authors={Navott et al.}
+	summary={DeepRV is a decoder-only neural surrogate that replaces GP prior sampling in MCMC pipelines by learning the mapping from latent noise and kernel parameters directly to function values, achieving near-exact GP accuracy at substantially reduced computational cost.}
+	]
+	
+	\tcblower
+
+	\paragraph{Key Contributions}
+	\begin{itemize}
+		\item Novel decoder-only architecture: Eliminates the VAE encoder entirely, removing posterior collapse and oversmoothing errors that plague prior surrogates like PriorCVAE.
+		\item Three architecture variants: MLP (baseline), gMLP (best accuracy/ efficiency trade-off), and Transformer (handles variable-length location sets via kernel-based attention).
+		\item State-of-the-art fidelity: Outperforms INLA, inducing points, RFFs, ADVI, and PriorCVAE in matching full GP MCMC, on both predictive and hyperparameter recovery metrics.
+		\item Flexible kernel support: Handles non-separable spatiotemporal kernals that INLA and RFFs cannot natively accommmodate.
+		\item Practical scalability: Demonstrated on real-world city-scale dataset ($n=4,994$ London LSOAs), completing in approx. 3 hours versus approx. 70 hours for full GP, on a single consumer GPU.
+	\end{itemize}
+
+	\paragraph{Notes}
+	\begin{itemize}
+		\item \textbf{Problem:} Gaussian Processes (GPs) are the gold standard for spatiotemporal modelling but scale as $\mathcal{O}(N^3)$, making them intractable for large datasets. Existing approximations (INLA, sparce/inducing-point GPs, RFFs, VAE-based surrogates like PriorCVAE) trade accuracy for scalability.
+		\item \textbf{Core idea:} Decoder-only neural surrogate exploiting the GP Cholesky decomposition $\mathbf{f}=L\mathbf{z}$, learning the mapping $(\mathbf{\theta}, \mathbf{z})\rightarrow \hat{f}$ directly. This eliminates the VAE encoder, thus removing posterior collapse and oversmoothing errors.
+		\item \textbf{Drop-in replacement:} Plugs into MCMC pipelines in place of GP prior sampling and therefore reduces complexity to $\mathcal{0}(M^2)$.
+		\item \textbf{Results:} Outperforms INLA, inducing points, RFFs, ADVI, and PriorCVAE on predictive MSE and hyperparameter recovery (Wasserstein distance to GP posteriors)
+		\item \textbf{Flexibility:} Handles non-separable spatiotemporal kernels unsupported by INLA/RFFs.
+		\item \textbf{Real-world:} London LSOA $(n=4,994)$ completed in approx. 3 hours vs. approx. 70 hours for full GP, on a single consumer GPU.
+		\item Limitations: Pre-training data generation still requires $\mathcal{O}(N^3)$ Cholesky decompositions; gMLP requires fixed grid size at training time.
+	\end{itemize}
+
+	\paragraph{Keywords}
+	\begin{itemize}
+		\item Gaussian Processes
+		\item Kernel functions
 	\end{itemize}
 \end{paper}
 
