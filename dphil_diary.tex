@@ -463,7 +463,46 @@ Today's main tasks:
 	\end{itemize}
 \end{paper}
 
+\section{23rd February 2026}
 
+\subsection{Paper: The Bayesian Geometry of Transformer Attention}
+\begin{paper}
+	papertitle = {The Bayesian Geometry of Transformer Attention~\cite{Agarwal2026}},
+	authors = {Agarwal et al.},
+	summary = {
+			Uses \textit{Bayesian wind tunnels} (controlled prediction tasks with closed-form posteriors where the hypothesis space is too large for memorisation and in-context prediction requires genuine probabilistic inference) to empirically prove transformers perform exact Bayesian inference and understand how.
+		}
+	\paragraph{Questions to clarify}
+	\begin{itemize}
+		\item How are the models trained? How are they evaluated?
+		\item What is the distribution over?
+	\end{itemize}
+	\tcblower
+	\paragraph{Notes}
+	\begin{itemize}
+		\item Setup
+		\begin{itemize}
+			\item Given a family of tasks indexed by $\theta \tilde{\pi(\theta)}$, inputs $x$ are drawn from some distribution, labels are drawn according to $y\tilde{p(y|x, \theta)}$. The model observes context $c=\{ (x_i, y_i)\}^k_{i=1}$ and must predict $y$ for a new query input.
+			\item Loss function is the population cross-entropy, just as in \cite{Mller2022} (here, the authors sample a new task for each batch though)
+ 		\end{itemize}
+		\item Evaluation
+		\begin{itemize}
+			\item "A model that achieves the correct posterior entropy at every position is functionally Bayesian - it produces predictions with the same uncertainty profile as the exact posterior"
+			\item In general, entropy matching doesn't guarantee distributional equivalence since two very different distributions can have the same entropy
+			\item[$\rightarrow$] just measuring entropy MAE doesn't tell us if the model had learned the right distribution, only the right uncertainty level.
+			\item[$\rightarrow$] The authors then argue that in their specific tasks, entropy does act as a sufficient diagnostic because the constrained structure of the task severely limits which distributions are consistent with a given entropy value. In addition, they verify distribution matching using KL divergence
+			\item[$\rightarrow$] The main metric used is the \textit{entropy calibration error}: \[ MAE = \frac{1}{L}\sum_k |H_\text{model}(k)-H_\text{Bayes}(k)|\]  
+		\end{itemize}
+		\item How Transformers perform exact Bayesian inference
+		\begin{itemize}
+			\item They first construct a representational frame, execute sequential elimination within this frame, and then refine posterior precision across layers.
+		\end{itemize}
+	\end{itemize}
+	\paragraph{Thoughts}
+	\begin{itemize}
+		\item Authors use small transformers. Do the findings translate to larger models?
+	\end{itemize}
+\end{paper}
 
 % Print bibliography section
 \printbibliographysection
