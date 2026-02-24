@@ -504,6 +504,22 @@ Today's main tasks:
 	\end{itemize}
 \end{paper}
 
+\section{24th February 2016}
+
+\begin{paper}[
+	papertitle={DeepRV: Accelerating spatiotemporal inference with pre-trained neural priors~\cite{Navott2025}},
+	authors={Navott et al.},
+	summary={DeepRV is a decoder-only neural surrogate that replaces GP prior sampling in MCMC.}
+]
+	\tcblower
+	\paragraph{Notes}
+	\begin{itemize}
+		\item GPs are unfeasible for large datasets due to $\mathcal{O}(N^3)$ scaling. Existing approximations (INLA, sparse/inducing-point GPs, RFFs, VAE-based surrogates like PriorCVAE) trade accuracy for scalability.
+		\item Difference to other neural surrogates: omits encoding process, no information bottleneck, leverages factorised stochastic processes directly for training
+		\item Key insight: for any stochastic process that decomposes into a latent random vector and a linear transformation, the encoding step can be entirely avoided.
+	\end{itemize}
+\end{paper}
+
 % Print bibliography section
 \printbibliographysection
 
