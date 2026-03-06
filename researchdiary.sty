@@ -52,6 +52,9 @@
 \RequirePackage{etoolbox}
 \RequirePackage{csquotes}
 \RequirePackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\RequirePackage{enumitem}
+\RequirePackage{xparse}
+
 
 % =============================================================================
 % PAGE SETTINGS
@@ -365,6 +368,25 @@
     \newpage
     \printbibliography[title=References]
 }
+
+\newcommand{\taskDoneIcon}{\faCheckSquare}   % checked box
+\newcommand{\taskTodoIcon}{\faSquare}        % empty box
+
+% A list environment with nice spacing and aligned labels
+\newlist{tasklist}{itemize}{1}
+\setlist[tasklist]{%
+  label=\taskTodoIcon,
+  leftmargin=2em,
+  labelsep=0.6em,
+  itemsep=0.25em,
+  topsep=0.25em,
+  align=parleft
+}
+
+% Commands to create items
+\NewDocumentCommand{\task}{m}{\item #1}
+\NewDocumentCommand{\taskdone}{m}{\item[\taskDoneIcon] #1}
+\NewDocumentCommand{\tasktodo}{m}{\item[\taskTodoIcon] #1}
 
 % =============================================================================
 % END OF PACKAGE

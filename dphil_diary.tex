@@ -562,6 +562,55 @@ Today's main tasks:
 	\end{itemize}
 \end{meetingsummary}
 
+\section{5th March 2026}
+
+\begin{summary}
+	Today's main tasks:
+	\begin{itemize}[leftmargin=*]
+		\item Start implementing Bijection Wind Tunnel
+	\end{itemize}
+\end{summary}
+
+\subsection{Task Breakdown: Bijection Wind Tunnel}
+
+\paragraph{Component 1: Create Bijection Dataset}
+\begin{tasklist}
+	\taskdone{Implement random bijection sampler}
+	\taskdone{Write sequence tokenizer in the format $[x_1, y_1, \text{SEP}, x_2, y_2, \text{SEP}, \ldots, x_{19}, \text{SEP}]$}
+	\taskdone{Build a DataLoader that generates fresh bijections every batch (no repeats)}
+\end{tasklist}
+
+\paragraph{Bayesian Ground Truth}
+\begin{tasklist}
+	\task{Implement the analytic posterior: uniform over $V-k+1$ unseen outputs at position k}
+	\task{Compute $H_\text{Bayes}(k) = log_2(V-k+1)$}
+	\task{Write a function to track observed outputs $O_{k-1}$ per sequence}
+\end{tasklist}
+
+\paragraph{Model Training and Evaluation}
+\begin{tasklist}
+	\task{Set up the transformer (6 layers, 6 heads, $d_\text{model}=192$, $d_\text{ffn}=768$)}
+	\task{Confirm learned token embeddings + learned absolute positional embeddings, pre-norm residual blocks}
+	\task{Implement training loop}
+	\task{Evaluate model performance and compare to findings in \cite{Agarwal2026}}
+\end{tasklist}
+
+\subsection{Bijection Dataset Implementation}
+\begin{itemize}
+	\item Implemented as Pytorch datatset to make usage easier and more efficient down the line
+	\item Initialisation requires parameters \texttt{V} (vocabulary size, the vocabulary will contain the integers from 1 to V (inclusive)) and \texttt{num\_sequences} (the number of samples to generate). Each sample is a different random bijection.
+	\item \textbf{Generating a random bijection:}
+	\begin{itemize}
+		\item The dataset class stores a list of all the permutations of elements $[1, 2, \ldots, V]$ that have already been used.
+		\item[1] To generate a new random bijection, we sample a new random permutation until we get one that is not in the list of used permutations. Token \texttt{1} maps to the first element of the permutation, token \texttt{2} maps to the second element, and so on. We call the sorted list of tokens the \textit{keys} and the corresponding list of mapped values the \textit{values}.
+		\item[2] We then stack the key-value pairs together and append a \texttt{SEP} token (value $V+1$) after each pair
+		\item[3] Permute the sequence by applying a random permutation to the key-value-SEP tuples (but not the tokens within each tuple)
+		\item[4] Flatten the tensor of the first $V-1$ triples to get a sequence of length $3(V-1)$ (the context tokens)
+		\item[5] Append the key of the query token and the final \texttt{SEP} token to the end of the sequence. The label for the query token is the value that corresponds to the query key in the bijection. 
+	\end{itemize}
+\end{itemize}
+
+\section{6th March 2026}
 
 % Print bibliography section
 \printbibliographysection
