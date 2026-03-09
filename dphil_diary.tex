@@ -582,8 +582,8 @@ Today's main tasks:
 
 \paragraph{Bayesian Ground Truth}
 \begin{tasklist}
-	\task{Implement the analytic posterior: uniform over $V-k+1$ unseen outputs at position k}
-	\task{Compute $H_\text{Bayes}(k) = log_2(V-k+1)$}
+	\taskdone{Implement the analytic posterior: uniform over $V-k+1$ unseen outputs at position k}
+	\taskdone{Compute $H_\text{Bayes}(k) = log_2(V-k+1)$}
 	\task{Write a function to track observed outputs $O_{k-1}$ per sequence}
 \end{tasklist}
 
@@ -610,7 +610,80 @@ Today's main tasks:
 	\end{itemize}
 \end{itemize}
 
-\section{6th March 2026}
+\section{9th March 2026}
+
+\begin{summary}
+	Today's main tasks:
+	\begin{itemize}[leftmargin=*]
+		\item Continue implementing Bijection Wind Tunnel
+		\item Research group meeting (11:00-15:00)
+	\end{itemize}
+\end{summary}
+
+\subsection{Research Group Meeting}
+\begin{meetingsummary}
+
+	\paragraph{DeepRV}
+	\begin{itemize}
+	\item Bottleneck is data generation
+	\begin{itemize}
+		\item Can we use an approximation of a Gaussian Process to generate training data? $\rightarrow$ hope is that noise cancels
+		\item Simplest version of DeepRV is gMLP
+		\item We don’t actually know where the limit of DeepRV is / we don’t know in general what the speed-up of DeepRV is
+	\end{itemize}
+	\end{itemize}
+
+	\paragraph{Reading (Inducing Points)}
+	For inducing points, read Murphy \emph{Probabilistic Machine Learning: Advanced Topics}, Chapter 18 (Gaussian processes).
+
+	\paragraph{Open Problems}
+	\begin{itemize}
+	\item Train Bottleneck
+	\begin{itemize}
+		\item $O(n^3)$
+		\item Can we train on approximate data?
+		\item Goal: we want a cheap way to generate data
+	\end{itemize}
+	\item Scale
+	\begin{itemize}
+		\item Can we train a lower dimension DeepRV (gULP)
+		\item Inducing DeepRV $\rightarrow$ this is already being worked on
+		\item What are the scale limits of DeepRV?
+	\end{itemize}
+	\item Arbitrary Location
+	\begin{itemize}
+		\item Fast transformers (Fast / Flash)
+		\item ID Embeddings and maximum number of pairs (exploitable to more points)
+		\begin{itemize}
+		\item Need to give the network the maximum number of points a priori $\rightarrow$ this is a bottleneck
+		\end{itemize}
+		\item This is about flexibility since
+	\end{itemize}
+	\end{itemize}
+
+	\paragraph{Other notes}
+	\begin{itemize}
+	\item \texttt{tinyurl.com/big-data-paradox}
+	\item Change points
+	\item Spectral mixture kernels $\rightarrow$ very cool and popular but 11 years ago so we can probably do better
+	\item Herlands et al. (AISTATS)
+	\item Fast Attention
+	\item Relevant papers to read:
+		\begin{itemize}
+			\item BSA-TNP~\cite{Jenson2025}
+			\item \href{https://arxiv.org/abs/1503.01057}{Kiss-GP}
+		\end{itemize}
+	\end{itemize}
+\end{meetingsummary}
+
+\section{10th March 2026}
+
+\begin{summary}
+	Today's main task:
+	\begin{itemize}
+		\item Read "LLMs are Bayesian, In Expectation, Not in Realization"~\cite{Chlon2025}
+	\end{itemize}
+\end{summary}
 
 % Print bibliography section
 \printbibliographysection

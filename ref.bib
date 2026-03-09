@@ -55,3 +55,13 @@
    url = {https://arxiv.org/abs/2510.04871},
    year = {2025}
 }
+
+@article{Chlon2025,
+   abstract = {Exchangeability-based martingale diagnostics have been used to question Bayesian explanations of transformer in-context learning. We show that these violations are compatible with Bayesian/MDL behavior once we account for a basic architectural fact: positional encodings break exchangeability. Accordingly, the relevant baseline is performance in expectation over orderings of an exchangeable multiset, not performance under every fixed ordering. In a Bernoulli microscope (under explicit regularity assumptions), we bound the permutation-induced dispersion detected by martingale diagnostics (Theorem~3.4) while proving near-optimal expected MDL/compression over permutations (Theorem~3.6). Empirically, black-box next-token log-probabilities from an Azure OpenAI deployment exhibit nonzero expectation--realization gaps that decay with context length (mean 0.74 at $n = 10$ to 0.26 at $n = 50$; 95\% confidence intervals), and permutation averaging reduces order-induced standard deviation with a $k^\{-1/2\}$ trend (Figure~2). Controlled from-scratch training ablations varying only the positional encoding show within-prefix order variance collapsing to $\approx 10^\{-16\}$ with no positional encoding, but remaining $10^\{-8\}$--$10^\{-6\}$ under standard positional encoding schemes (Table~2). Robustness checks extend beyond Bernoulli to categorical sequences, synthetic in-context learning tasks, and evidence-grounded QA with permuted exchangeable evidence chunks.},
+   author = {Leon Chlon and Zein Khamis and Maggie Chlon and Mahdi El Zein and MarcAntonio M. Awada},
+   keywords = {cs.LG,stat.ML},
+   month = {7},
+   title = {LLMs are Bayesian, In Expectation, Not in Realization},
+   url = {https://arxiv.org/abs/2507.11768v2},
+   year = {2025}
+}
