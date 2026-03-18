@@ -584,14 +584,14 @@ Today's main tasks:
 \begin{tasklist}
 	\taskdone{Implement the analytic posterior: uniform over $V-k+1$ unseen outputs at position k}
 	\taskdone{Compute $H_\text{Bayes}(k) = log_2(V-k+1)$}
-	\task{Write a function to track observed outputs $O_{k-1}$ per sequence}
+	\taskdone{Write a function to track observed outputs $O_{k-1}$ per sequence}
 \end{tasklist}
 
 \paragraph{Model Training and Evaluation}
 \begin{tasklist}
-	\task{Set up the transformer (6 layers, 6 heads, $d_\text{model}=192$, $d_\text{ffn}=768$)}
-	\task{Confirm learned token embeddings + learned absolute positional embeddings, pre-norm residual blocks}
-	\task{Implement training loop}
+	\taskdone{Set up the transformer (6 layers, 6 heads, $d_\text{model}=192$, $d_\text{ffn}=768$)}
+	\taskdone{Confirm learned token embeddings + learned absolute positional embeddings, pre-norm residual blocks}
+	\taskdone{Implement training loop}
 	\task{Evaluate model performance and compare to findings in \cite{Agarwal2026}}
 \end{tasklist}
 
@@ -682,9 +682,47 @@ Today's main tasks:
 	Today's main task:
 	\begin{itemize}
 		\item Read "LLMs are Bayesian, In Expectation, Not in Realization"~\cite{Chlon2025}
+		\item Finish Bijection Wind Tunnel implementation
 	\end{itemize}
 \end{summary}
 
+\begin{note}
+	\begin{itemize}
+		\item Finished implementing bijection wind tunnel. Note sure about some of the implementation details though. E.g. the paper~\cite{Agarwal2026} mentions that they only use $10^5$ bijections for training, but later also states that they train for 150k steps with a batch size of 64, which would require $9.6\times 10^6$ bijections if they are all different. I have implemented the dataset to generate fresh bijections every batch (i.e. I use $9.6\times 10^6$ bijections in total), but I am not sure if this is what they did in the paper.
+	\end{itemize}
+\end{note}
+
+\section{17th March 2026}
+
+\begin{summary}
+	Today's main task:
+	\begin{itemize}
+		\item Implement HMM wind tunnel
+	\end{itemize}
+\end{summary}
+
+\subsection{HMM Wind Tunnel Implementation}
+
+\begin{note}
+	The HMM Wind Tunnel specification is not clear
+	\begin{itemize}
+		\item Authors use a HMM with $S=5$ hidden states and $V=5$ observation symbols
+		\item Each sequence contains a \textbf{10-token header encoding flattened T and E} and \textbf{K observation-prediction pairs, each consisting of the observed symbol $o_t$ and a supervised prediction at the same position for $p(s_t | o_{1:t})$} 
+		\item How are $T$ and $E$ encoded into a 10-token header? T is an $S \times S$ matrix and $E$ is $S \times V$, with $S=5$ and $V=5$ this means that both should have 25 elements.
+		\item How is the rest of the sequence formatted? Is it $o_i, s_i, o_{i+1}, s_{i+1}, \ldots, o_K, s_K$, where $s_i, s_{i+1}, \ldots, s_K$ are sampled?
+	\end{itemize}
+\end{note}
+
+\section{18th March 2026}
+
+\begin{summary}
+	Today's main tasks:
+	\begin{itemize}
+		\item Finish HMM wind tunnel implementation
+		\item Run full bijection experiment
+		\item Start associative recall wind tunnel implementation
+	\end{itemize}
+\end{summary}
 % Print bibliography section
 \printbibliographysection
 
